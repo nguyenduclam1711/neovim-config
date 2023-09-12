@@ -366,6 +366,8 @@ vim.o.cursorline = true
 
 vim.o.splitright = true
 
+vim.g.netrw_keepdir = 0
+
 -- From theprimeagen
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
