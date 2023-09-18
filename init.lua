@@ -366,7 +366,7 @@ vim.o.cursorline = true
 
 vim.o.splitright = true
 
-vim.g.netrw_keepdir = 0
+vim.g.netrw_keepdir = 1
 
 -- From theprimeagen
 vim.opt.tabstop = 2
@@ -453,7 +453,11 @@ require('telescope').setup {
 pcall(require('telescope').load_extension, 'fzf')
 
 -- See `:help telescope.builtin`
-vim.keymap.set('n', '<leader><space>', require('telescope.builtin').git_files, { desc = 'Search git files' })
+vim.keymap.set('n', '<leader><space>', function()
+  require('telescope.builtin').git_files({
+    show_untracked = true
+  })
+end, { desc = 'Search git files' })
 vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = 'Search help' })
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = 'Search by grep' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics,
