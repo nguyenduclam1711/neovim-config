@@ -454,10 +454,14 @@ pcall(require('telescope').load_extension, 'fzf')
 
 -- See `:help telescope.builtin`
 vim.keymap.set('n', '<leader><space>', function()
-  require('telescope.builtin').git_files({
-    show_untracked = true
-  })
-end, { desc = 'Search git files' })
+  if pcall(
+        function()
+          require('telescope.builtin').git_files({ show_untracked = true })
+        end
+      ) == false then
+    require('telescope.builtin').find_files({})
+  end
+end, { desc = 'Search files' })
 vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = 'Search help' })
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = 'Search by grep' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics,
