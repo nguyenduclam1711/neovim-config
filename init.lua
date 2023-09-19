@@ -307,6 +307,26 @@ require('lazy').setup({
     opts = {
       view_options = {
         show_hidden = true,
+      },
+      keymaps = {
+        ["g?"] = false,
+        ["?"] = "actions.show_help",
+        ["<CR>"] = "actions.select",
+        ["<C-s>"] = false,
+        ["<C-v>"] = "actions.select_vsplit",
+        ["<C-h>"] = false,
+        ["<C-t>"] = false,
+        ["<C-p>"] = "actions.preview",
+        ["<C-c>"] = "actions.close",
+        ["<C-l>"] = false,
+        ["r"] = "actions.refresh",
+        ["-"] = "actions.parent",
+        ["_"] = "actions.open_cwd",
+        ["`"] = false,
+        ["~"] = false,
+        ["gs"] = false,
+        ["g."] = false,
+        ["H"] = "actions.toggle_hidden",
       }
     },
     -- Optional dependencies
