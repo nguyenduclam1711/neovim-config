@@ -303,6 +303,10 @@ require('lazy').setup({
   },
 
   {
+    'RRethy/vim-illuminate',
+  },
+
+  {
     'stevearc/oil.nvim',
     opts = {
       view_options = {
