@@ -495,6 +495,7 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics,
   { desc = 'Search diagnostics for all open buffers' })
 vim.keymap.set('n', '<leader>sb', require('telescope.builtin').buffers, { desc = 'Search buffers' })
 vim.keymap.set('n', '<leader>gs', require('telescope.builtin').git_status, { desc = 'Git status files' })
+vim.keymap.set('n', '<leader>gb', require('telescope.builtin').git_bcommits, { desc = 'Git buffer commits' })
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
