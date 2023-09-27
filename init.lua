@@ -137,6 +137,7 @@ require('lazy').setup({
           { buffer = bufnr, desc = 'Undo stage this hunk' })
         vim.keymap.set('n', '<leader>ghn', require('gitsigns').next_hunk, { buffer = bufnr, desc = 'Go to next hunk' })
         vim.keymap.set('n', '<leader>ghp', require('gitsigns').prev_hunk, { buffer = bufnr, desc = 'Go to prev hunk' })
+        vim.keymap.set('n', '<leader>ghd', require('gitsigns').diffthis, { desc = 'Diff this' })
       end,
     },
   },
