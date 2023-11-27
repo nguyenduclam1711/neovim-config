@@ -155,6 +155,12 @@ require("lazy").setup({
         )
         vim.keymap.set(
           "n",
+          "<leader>ghS",
+          require("gitsigns").stage_buffer,
+          { buffer = bufnr, desc = "Stage this buffer" }
+        )
+        vim.keymap.set(
+          "n",
           "<leader>ghu",
           require("gitsigns").undo_stage_hunk,
           { buffer = bufnr, desc = "Undo stage this hunk" }
@@ -553,6 +559,7 @@ require("nvim-treesitter.configs").setup({
     "css",
     "scss",
     "ruby",
+    "markdown",
   },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
