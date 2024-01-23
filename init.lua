@@ -503,6 +503,10 @@ vim.keymap.set("n", "<leader>sc", '<cmd>lua require("spectre").open_file_search(
 	desc = "Toggle Spectre for current file",
 })
 
+-- still in visual mode after indent in visual mode
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
+
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
