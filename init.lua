@@ -260,6 +260,9 @@ require("lazy").setup({
 		-- See `:help indent_blankline.txt`
 		opts = {},
 		main = "ibl",
+		config = function()
+			require("ibl").setup()
+		end,
 	},
 
 	-- "gc" to comment visual regions/lines
@@ -375,6 +378,58 @@ require("lazy").setup({
 
 	{
 		"nvim-treesitter/nvim-treesitter-context",
+	},
+
+	{
+		"ThePrimeagen/harpoon",
+		branch = "harpoon2",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		config = function()
+			local harpoon = require("harpoon")
+			harpoon:setup({})
+
+			-- keymap for harpoon
+			vim.keymap.set("n", "<leader>ha", function()
+				harpoon:list():append()
+			end, {
+				desc = "Append file to harpoon",
+			})
+			vim.keymap.set("n", "<leader>hd", function()
+				harpoon:list():remove()
+			end, {
+				desc = "Remove file from harpoon",
+			})
+			vim.keymap.set("n", "<leader>hl", function()
+				harpoon.ui:toggle_quick_menu(harpoon:list())
+			end, {
+				desc = "Open harpoon window",
+			})
+
+			-- vim.keymap.set("n", "<leader>h1", function()
+			-- 	harpoon:list():select(1)
+			-- end)
+			-- vim.keymap.set("n", "<leader>h2", function()
+			-- 	harpoon:list():select(2)
+			-- end)
+			-- vim.keymap.set("n", "<leader>h3", function()
+			-- 	harpoon:list():select(3)
+			-- end)
+			-- vim.keymap.set("n", "<leader>h4", function()
+			-- 	harpoon:list():select(4)
+			-- end)
+
+			-- Toggle previous & next buffers stored within Harpoon list
+			vim.keymap.set("n", "<leader>hp", function()
+				harpoon:list():prev()
+			end, {
+				desc = "Select prev harpoon buffer",
+			})
+			vim.keymap.set("n", "<leader>hn", function()
+				harpoon:list():next()
+			end, {
+				desc = "Select next harpoon buffer",
+			})
+		end,
 	},
 
 	-- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
