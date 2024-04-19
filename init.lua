@@ -451,6 +451,9 @@ require("lazy").setup({
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
 
+-- Add vim to recognize .templ files
+vim.filetype.add({ extension = { templ = "templ" } })
+
 -- Set highlight on search
 vim.o.hlsearch = false
 
@@ -733,12 +736,12 @@ end
 --  define the property 'filetypes' to the map in question.
 local servers = {
 	-- clangd = {},
-	-- gopls = {},
+	gopls = {},
 	-- pyright = {},
 	-- rust_analyzer = {},
 	-- tsserver = {},
 	-- html = { filetypes = { 'html', 'twig', 'hbs'} },
-
+	templ = {},
 	lua_ls = {
 		Lua = {
 			workspace = { checkThirdParty = false },
