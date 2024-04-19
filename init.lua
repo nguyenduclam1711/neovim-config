@@ -748,6 +748,13 @@ local servers = {
 			telemetry = { enable = false },
 		},
 	},
+	bashls = {},
+	cssls = {},
+	eslint = {},
+	html = {},
+	jsonls = {},
+	prosemd_lsp = {},
+	tsserver = {},
 }
 
 -- Setup neovim lua configuration
