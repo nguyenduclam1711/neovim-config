@@ -266,7 +266,15 @@ require("lazy").setup({
 	},
 
 	-- "gc" to comment visual regions/lines
-	{ "numToStr/Comment.nvim", opts = {} },
+	{
+		"numToStr/Comment.nvim",
+		opts = {},
+		config = function()
+			require("Comment").setup({
+				pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+			})
+		end,
+	},
 
 	-- Fuzzy Finder (files, lsp, etc)
 	{
@@ -432,6 +440,15 @@ require("lazy").setup({
 		end,
 	},
 
+	{
+		"JoosepAlviste/nvim-ts-context-commentstring",
+		config = function()
+			require("ts_context_commentstring").setup({
+				enable_autocmd = false,
+			})
+		end,
+	},
+
 	-- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
 	--       These are some example plugins that I've included in the kickstart repository.
 	--       Uncomment any of the lines below to enable them.
@@ -453,6 +470,9 @@ require("lazy").setup({
 
 -- Add vim to recognize .templ files
 vim.filetype.add({ extension = { templ = "templ" } })
+
+-- Skip backwards compatibility routines and speed up loading for comment string
+vim.g.skip_ts_context_commentstring_module = true
 
 -- Set highlight on search
 vim.o.hlsearch = false
