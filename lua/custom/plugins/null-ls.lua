@@ -64,6 +64,7 @@ return {
 								return eslint_client ~= nil
 							end,
 						}),
+						null_ls.builtins.diagnostics.djlint,
 					},
 				})
 

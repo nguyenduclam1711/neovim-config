@@ -760,7 +760,6 @@ local servers = {
 	-- pyright = {},
 	-- rust_analyzer = {},
 	-- tsserver = {},
-	-- html = { filetypes = { 'html', 'twig', 'hbs'} },
 	templ = {},
 	lua_ls = {
 		Lua = {
@@ -771,10 +770,11 @@ local servers = {
 	bashls = {},
 	cssls = {},
 	eslint = {},
-	html = {},
+	html = { filetypes = { "html", "twig", "hbs", "handlebars" } },
 	jsonls = {},
 	prosemd_lsp = {},
 	tsserver = {},
+	djlint = { filetypes = { "hbs", "handlebars" } },
 }
 
 -- Setup neovim lua configuration
