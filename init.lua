@@ -774,7 +774,6 @@ local servers = {
 	jsonls = {},
 	prosemd_lsp = {},
 	tsserver = {},
-	djlint = { filetypes = { "hbs", "handlebars" } },
 }
 
 -- Setup neovim lua configuration
