@@ -774,6 +774,8 @@ local servers = {
 	jsonls = {},
 	prosemd_lsp = {},
 	tsserver = {},
+	-- prisma
+	prismals = {},
 }
 
 -- Setup neovim lua configuration
