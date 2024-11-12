@@ -777,6 +777,7 @@ local servers = {
 	prismals = {},
 	dockerls = {},
 	docker_compose_language_service = {},
+	cucumber_language_server = {},
 }
 
 -- Setup neovim lua configuration
