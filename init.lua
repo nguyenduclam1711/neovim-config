@@ -776,6 +776,7 @@ local servers = {
 	tsserver = {},
 	-- prisma
 	prismals = {},
+	dockerls = {},
 }
 
 -- Setup neovim lua configuration
