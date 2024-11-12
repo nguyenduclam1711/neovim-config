@@ -774,9 +774,9 @@ local servers = {
 	jsonls = {},
 	prosemd_lsp = {},
 	tsserver = {},
-	-- prisma
 	prismals = {},
 	dockerls = {},
+	docker_compose_language_service = {},
 }
 
 -- Setup neovim lua configuration
