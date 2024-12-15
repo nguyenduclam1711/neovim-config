@@ -3,7 +3,7 @@ return {
     "echasnovski/mini.files",
     opts = {
       windows = {
-        preview = false,
+        preview = true,
       },
     },
   },
