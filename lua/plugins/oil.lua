@@ -15,6 +15,9 @@ return {
       ["g."] = false,
       ["H"] = "actions.toggle_hidden",
     },
+    win_options = {
+      signcolumn = "yes:2",
+    },
   },
   -- Optional dependencies
   dependencies = { { "echasnovski/mini.icons", opts = {} } },
