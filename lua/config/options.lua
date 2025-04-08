@@ -11,3 +11,6 @@ vim.g.lazyvim_prettier_needs_config = true
 
 -- always wrap lines
 vim.o.wrap = true
+
+-- disable snacks animate
+vim.g.snacks_animate = false
