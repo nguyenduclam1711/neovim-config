@@ -14,3 +14,6 @@ vim.o.wrap = true
 
 -- disable snacks animate
 vim.g.snacks_animate = false
+
+-- disable swap file
+vim.opt.swapfile = false
