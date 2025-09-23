@@ -7,3 +7,5 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "G", "Gzz")
 
 vim.keymap.set("n", "<leader>e", "<CMD>Oil<CR>", { desc = "Oil open parent directory" })
+
+vim.keymap.set("i", "<C-c>", "<Esc>")
