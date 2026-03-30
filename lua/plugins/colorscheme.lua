@@ -7,19 +7,17 @@ return {
     },
   },
   {
-    "navarasu/onedark.nvim",
-    priority = 1000,
-    config = function()
-      require("onedark").setup({
-        style = "dark",
-      })
-      require("onedark").load()
-    end,
+    "catppuccin/nvim",
+    lazy = true,
+    name = "catppuccin",
+    opts = {
+      flavour = "frappe",
+    },
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "onedark",
+      colorscheme = "catppuccin",
     },
   },
 }
