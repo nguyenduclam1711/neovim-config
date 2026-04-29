@@ -11,10 +11,6 @@ return {
           },
         },
       },
-      -- Explicitly disable angularls if not needed
-      angularls = {
-        enabled = false,
-      },
     },
   },
 }
