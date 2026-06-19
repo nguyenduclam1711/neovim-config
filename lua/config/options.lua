@@ -38,3 +38,7 @@ vim.opt.scrolloff = 8 -- LazyVim default is fine, don't inflate this
 
 -- Don't pass messages to ins-completion-menu (reduces flicker)
 vim.opt.shortmess:append("c")
+
+-- Balanced big-file handling (keeps LSP/completion/tree-sitter, trims the
+-- expensive bits). Required here so its autocmds register before any file read.
+require("config.bigfile")
