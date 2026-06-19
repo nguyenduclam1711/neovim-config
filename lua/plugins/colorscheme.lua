@@ -8,7 +8,10 @@ return {
   },
   {
     "catppuccin/nvim",
-    lazy = true,
+    -- Load eagerly (not lazily) so catppuccin is on the runtimepath and set up
+    -- before lualine/bufferline build their themes. Lazy-loading it caused a
+    -- race where lualine couldn't find `catppuccin-latte` and fell back to `auto`.
+    lazy = false,
     name = "catppuccin",
     config = function()
       local C = require("catppuccin.palettes").get_palette("latte")

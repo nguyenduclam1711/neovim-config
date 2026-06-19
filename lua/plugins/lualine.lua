@@ -5,7 +5,7 @@ return {
   opts = {
     options = {
       icons_enabled = false,
-      theme = "catppuccin-nvim",
+      theme = "catppuccin-latte",
       component_separators = "|",
       section_separators = "",
     },

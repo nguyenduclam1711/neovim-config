@@ -5,10 +5,15 @@ vim.g.lazyvim_eslint_auto_format = true
 vim.g.lazyvim_prettier_needs_config = true
 vim.g.snacks_animate = false
 
+-- Pin catppuccin's flavour globally. Some integrations (e.g. bufferline's
+-- `special.bufferline.get_theme`) resolve the flavour dynamically via
+-- `require("catppuccin").flavour` at build time. When they build before
+-- catppuccin's `load()` runs, that's unset and they fall back to mocha (dark).
+-- This global is in catppuccin's resolution chain, so it guarantees latte.
+vim.g.catppuccin_flavour = "latte"
+
 vim.o.wrap = true
 vim.opt.swapfile = false
-
-vim.lsp.set_log_level("OFF") -- LSP log error only
 
 -- ─── Performance ──────────────────────────────────────────────────────────────
 
